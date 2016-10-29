@@ -3,3 +3,4 @@
 <p><%= @post.snippet %></p>
 
 <%= link_to "back to the Posts", posts_path %>
+<%= link_to 'delete this post', posts_path, method: :delete, data: { confirm: 'Are you sure you want to delete this post' } %>
