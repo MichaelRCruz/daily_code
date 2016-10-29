@@ -1,5 +1,22 @@
-<h1>New Post</h1>
+<h1>Add a new post.</h1>
 
-<p>this is where you will add a new post</p>
+<%= form_for @post do |f| %>
 
-<%= link_to "Back to the posts", posts_path %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :snippet %>
+    <%= f.text_field :snippet %>
+  </div>
+
+  <div>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+  <%= f.submit 'submit this post' %>
+<% end %>
+
+<%= link_to "back to the Posts", posts_path %>
