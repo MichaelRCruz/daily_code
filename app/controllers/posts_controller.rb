@@ -13,7 +13,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:title, :content, :language, :snippet))
+    @post = Post.new(post_params)
+    @post.user = current_user()
     if @post.save
       redirect_to posts_path
     else
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    if @post.update_attributes(params.require(:post).permit(:title, :content, :language, :snippet))
+    if @post.update_attributes(post_params)
     else
       render :edit
     end
@@ -38,6 +39,15 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
+  end
+
+private
+  def post_params
+    params.require(:post).permit(:title, :content, :language, :snippet, :user)
+  end
+
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
   end
 
 end

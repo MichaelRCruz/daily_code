@@ -13,10 +13,15 @@
   </div>
 
   <div>
+    <%= f.label :language %>
+    <%= f.text_field :language %>
+  </div>
+
+  <div>
     <%= f.label :content %>
     <%= f.text_field :content %>
   </div>
-  <%= f.submit 'submit this post' %>
+  <%= f.submit 'submit this post'%>
 <% end %>
 
 <%= link_to "back to the Posts", posts_path %>
