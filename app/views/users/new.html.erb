@@ -1,5 +1,22 @@
-<h1>New user</h1>
+<h1>Add a new user.</h1>
 
-<p>this is where you will add a user</p>
+<%= form_for @user do |f| %>
 
-<%= link_to "Back to the users", users_path %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password_digest %>
+    <%= f.text_field :password_digest %>
+  </div>
+  <%= f.submit 'submit this user' %>
+<% end %>
+
+<%= link_to "back to the Users", users_path %>
