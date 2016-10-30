@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   patch 'users/:id' => 'users#update'
   delete 'users/:id' => 'users#destroy'
 
-  get 'posts/' => 'posts#index'
+  get '/posts' => 'posts#index'
   get 'posts/new' => 'posts#new', as: :new_post
   get 'posts/:id' => 'posts#show', as: :post
   post 'posts/' => 'posts#create'
