@@ -39,9 +39,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
+    if User.find_by(id: session[:user_id]) == Post.find_by(id: session[:user_id])
+      @post = Post.find(params[:id])
+      @post.destroy
+      redirect_to posts_path
+    else
+      flash[:notice] = "Cannot delete other user post"
+    end
   end
 
 private
