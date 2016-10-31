@@ -6,7 +6,8 @@
     <%= post.title %>
   </li>
   <li>
-    <%= link_to "my rad code", post.snippet.url %>
+    <%= link_to "code", post.snippet.url %>
+    <%= link_to "post", post_path(post) %>
   </li>
   <% end %>
 </ul>
