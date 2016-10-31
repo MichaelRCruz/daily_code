@@ -1,7 +1,6 @@
 <h1>Look at this post</h1>
 <%= @post.title %>
 
-<%= snippet_tag post.snippet.url() %>
 
 <%= link_to "back to the Posts", posts_path %>
 <%= link_to 'delete this post', post_path, method: :delete, data: { confirm: 'Are you sure you want to delete this post' } %>
