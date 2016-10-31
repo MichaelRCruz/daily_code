@@ -13,9 +13,11 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(params.require(:comment).permit(:content))
+    @comment = Comment.new(comment_params)
+    @comment.user = current_user()
+    @comment.post = Post.find(params[:post_id])
     if @comment.save
-      redirect_to comments_path
+      redirect_to post_path(@comment.post)
     else
       render :new
     end
@@ -28,7 +30,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
 
-    if @comment.update_attributes(params.require(:comment).permit(:content))
+    if @comment.update_attributes(comment_params)
     else
       render :edit
     end
@@ -39,5 +41,14 @@ class CommentsController < ApplicationController
     @comment.destroy
     redirect_to comments_path
   end
+
+  private
+    def comment_params
+      params.require(:comment).permit(:content)
+    end
+
+    def current_user
+      @current_user ||= User.find_by(id: session[:user_id])
+    end
 
 end

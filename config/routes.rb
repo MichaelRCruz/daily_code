@@ -14,20 +14,24 @@ Rails.application.routes.draw do
   patch 'users/:id' => 'users#update'
   delete 'users/:id' => 'users#destroy'
 
-  get 'posts/' => 'posts#index'
-  get 'posts/new' => 'posts#new', as: :new_post
-  get 'posts/:id' => 'posts#show', as: :post
-  post 'posts/' => 'posts#create'
-  get 'posts/:id/edit' => 'posts#edit', as: :edit_post
-  patch 'posts/:id' => 'posts#update'
-  delete 'posts/:id' => 'posts#destroy'
+  # get 'posts/' => 'posts#index'
+  # get 'posts/new' => 'posts#new', as: :new_post
+  # get 'posts/:id' => 'posts#show', as: :post
+  # post 'posts/' => 'posts#create'
+  # get 'posts/:id/edit' => 'posts#edit', as: :edit_post
+  # patch 'posts/:id' => 'posts#update'
+  # delete 'posts/:id' => 'posts#destroy'
+  #
+  # get 'comments/' => 'comments#index'
+  # get 'comments/new' => 'comments#new', as: :new_comment
+  # get 'comments/:id' => 'comments#show', as: :comment
+  # post 'comments/' => 'comments#create'
+  # get 'comments/:id/edit' => 'comments#edit', as: :edit_comment
+  # patch 'comments/:id' => 'comments#update'
+  # delete 'comments/:id' => 'comments#destroy'
 
-  get 'comments/' => 'comments#index'
-  get 'comments/new' => 'comments#new', as: :new_comment
-  get 'comments/:id' => 'comments#show', as: :comment
-  post 'comments/' => 'comments#create'
-  get 'comments/:id/edit' => 'comments#edit', as: :edit_comment
-  patch 'comments/:id' => 'comments#update'
-  delete 'comments/:id' => 'comments#destroy'
+  resources :posts do
+    resources :comments
+  end
 
 end

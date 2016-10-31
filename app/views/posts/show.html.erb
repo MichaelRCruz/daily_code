@@ -2,6 +2,18 @@
 <%= @post.title %>
 <pre><%= @snippet %></pre>
 
+<% @post.comments.each do |comment| %>
+  <%= comment.content %>
+<% end %>
+
+<%= form_for [@post, @comment] do |f| %>
+
+  <div>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+  <%= f.submit 'submit comment' %>
+<% end %>
 
 <%= link_to "back to the Posts", posts_path %>
 <%= link_to 'delete this post', post_path, method: :delete, data: { confirm: 'Are you sure you want to delete this post' } %>
