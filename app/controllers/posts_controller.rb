@@ -43,7 +43,7 @@ class PostsController < ApplicationController
 
 private
   def post_params
-    params.require(:post).permit(:title, :content, :language, :snippet, :user)
+    params.require(:post).permit(:title, :content, :language, :user, :snippet)
   end
 
   def current_user
