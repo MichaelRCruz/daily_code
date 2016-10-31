@@ -18,18 +18,29 @@
           </a>
         </div>
       </div>
-        <div id="logInLogOut">
           <% if current_user %>
-            Hello, <%= current_user.name %> <%= link_to 'Log Out', logout_path, method: :delete %>
+          <div class="dropdown">
             <%= link_to "create new post", new_post_path %>
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Hello, <%= current_user.name %>
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#"><%= link_to 'log out', logout_path, method: :delete %></a></li>
+              <li><a href="#">view profile</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">maybe settings</a></li>
+            </ul>
+          </div>
           <% else %>
+          <div id="logInLogOut">
             <%= link_to 'Log In', login_path %>
             <%= link_to 'Sign Up', new_user_path %>
           <% end %>
       </div>
-
     </nav>
 
     <%= yield %>
+    
   </body>
 </html>
