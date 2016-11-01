@@ -27,7 +27,7 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
               <li><a href="#"><%= link_to 'log out', logout_path, method: :delete %></a></li>
-              <li><a href="#">view profile</a></li>
+              <li><a href="#"><%= link_to 'view profile', user_path(current_user) %></a></li>
               <li role="separator" class="divider"></li>
               <li><a href="#">maybe settings</a></li>
             </ul>
@@ -41,6 +41,6 @@
     </nav>
 
     <%= yield %>
-    
+
   </body>
 </html>

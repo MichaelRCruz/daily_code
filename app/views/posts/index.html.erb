@@ -1,8 +1,10 @@
 <ul>
   <% @posts.each do |post| %>
 
-  <div>
-    <%= link_to post.title, post_path(post) %>
+  <div id="postsContainer">
+    <div id="post">
+      <%= link_to post.title, post_path(post) %>
+    </div>
   </div>
   <% end %>
 </ul>

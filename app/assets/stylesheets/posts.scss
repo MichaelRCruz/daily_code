@@ -36,3 +36,13 @@ pre {
 .comment {
   display: inline-block;
 }
+
+#post {
+  width: 150px;
+  height: 150px;
+  border: 2px solid green;
+  border-radius: 10px;
+  float: left;
+  margin: 15px;
+  text-align: center;
+}
