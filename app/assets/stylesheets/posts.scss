@@ -29,12 +29,13 @@ pre {
 //   color: #93A1A1!important;
 // }
 
-.postTitle {
-  display: inline-block;
+#postTitle {
+  font-size: 40px;
+  text-align: left;
 }
 
-.comment {
-  display: inline-block;
+#comment {
+  float: left;
 }
 
 #post {
@@ -59,4 +60,9 @@ pre {
 
 #outerCodeContainer {
   text-align: center;
+}
+
+.createNew {
+  background-color: #679436;
+  border-color: black;
 }
