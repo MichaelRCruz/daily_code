@@ -1,9 +1,17 @@
 <div id="postTitle"><%= @post.title %></div>
-<div id="codeContainer"><pre><%= @syntax_highlight.html_safe %></pre></div>
 
+<div id="outerCodeContainer">
+  <div id="codeContainer"><pre><%= @syntax_highlight.html_safe %></pre>
+  </div>
+<br>
 <% @post.comments.each do |comment| %>
-  <div id="commentBox"><%= comment.content %></div>
+  <div id="commentBox">
+    <%= comment.user.name %>:
+    <%= comment.content %>
+  </div>
+  <br>
 <% end %>
+</div>
 
 <%= form_for [@post, @comment] do |f| %>
 

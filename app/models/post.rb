@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_attached_file :snippet
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   # validates_attachment_content_type :snippet, :content_type => ["*/*"]
 

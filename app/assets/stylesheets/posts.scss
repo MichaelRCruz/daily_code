@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background-color: white;
+  background-color: #EBF2FA;
 }
 
 #logInLogOut {
@@ -40,9 +40,23 @@ pre {
 #post {
   width: 150px;
   height: 150px;
-  border: 2px solid green;
+  border: 2px solid #679436;
   border-radius: 10px;
   float: left;
   margin: 15px;
+  text-align: center;
+  color: black;
+}
+
+.navbar {
+  background-color: #427AA1;
+}
+
+#codeContainer, #commentBox {
+  display: inline-block;
+  text-align: left;
+}
+
+#outerCodeContainer {
   text-align: center;
 }
