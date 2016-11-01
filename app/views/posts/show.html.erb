@@ -1,4 +1,4 @@
-<%= @post.title %>
+<div id="postTitle"><%= @post.title %></div>
 <pre><%= @syntax_highlight.html_safe %></pre>
 
 <% @post.comments.each do |comment| %>
@@ -7,7 +7,7 @@
 
 <%= form_for [@post, @comment] do |f| %>
 
-  <div>
+  <div id="comment">
     <%= f.label :content %>
     <%= f.text_field :content %>
   </div>

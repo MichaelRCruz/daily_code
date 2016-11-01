@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @snippet = open("http:" + @post.snippet.url).read
     code_string = @snippet
-    @syntax_highlight = CodeRay.scan(code_string, :ruby).div(:line_numbers => :table)
+    @syntax_highlight = CodeRay.scan(code_string, @post.language).div(:line_numbers => :table)
   end
 
   def new

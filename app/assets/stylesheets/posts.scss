@@ -17,3 +17,22 @@ body {
   right: 2%;
   top: 20%
 }
+
+pre {
+  display: inline-block;
+  overflow: hidden;
+  background: #002A35!important;
+  color: #93A1A1!important;
+}
+// pre {
+//   background: #002A35!important;
+//   color: #93A1A1!important;
+// }
+
+.postTitle {
+  display: inline-block;
+}
+
+.comment {
+  display: inline-block;
+}
