@@ -1,6 +1,5 @@
-
 <%= @post.title %>
-<pre><%= @snippet %></pre>
+<pre><%= @syntax_highlight.html_safe %></pre>
 
 <% @post.comments.each do |comment| %>
   <%= comment.content %>
