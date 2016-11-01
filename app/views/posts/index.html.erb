@@ -1,11 +1,8 @@
 <ul>
   <% @posts.each do |post| %>
-  <li>
-    <%= post.title %>
-  </li>
-  <li>
-    <!-- <%= link_to "code", post.snippet.url %> -->
-    <%= link_to "post", post_path(post) %>
-  </li>
+
+  <div>
+    <%= link_to post.title, post_path(post) %>
+  </div>
   <% end %>
 </ul>
