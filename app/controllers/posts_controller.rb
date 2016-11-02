@@ -1,9 +1,17 @@
 require "open-uri"
 require 'coderay'
+require 'json'
+require 'tempfile'
+
 class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+
+    respond_to do |format|
+      format.html { @posts }
+      format.json {render json: @posts }
+    end
   end
 
   def show
@@ -21,6 +29,18 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user()
+    # TODO: make sure user is logged in before we try to save the post
+
+    if request.content_type == 'application/json'
+      json_object = JSON.parse(request.raw_post)
+
+      tmp = Tempfile.new('lol what is happening')
+      tmp << json_object['snippet']
+      tmp.flush
+
+      @post.snippet = tmp
+    end
+
     if @post.save
       redirect_to posts_path
     else
@@ -51,13 +71,29 @@ class PostsController < ApplicationController
     end
   end
 
+def verified_request?
+    # bypasses the csrf token check
+    if request.content_type == "application/json"
+      true
+    else
+      super()
+    end
+end
+
 private
   def post_params
     params.require(:post).permit(:title, :content, :language, :user, :snippet)
   end
 
   def current_user
-    @current_user ||= User.find_by(id: session[:user_id])
+    if request.content_type == 'application/json'
+      json_object = JSON.parse(request.raw_post)
+      user = User.find_by(email: json_object['email'])
+
+      @current_user ||= user.try(:authenticate, json_object['password'])
+    else
+      @current_user ||= User.find_by(id: session[:user_id])
+    end
   end
 
 end
