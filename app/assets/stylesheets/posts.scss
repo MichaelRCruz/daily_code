@@ -3,13 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background-color: #EBF2FA;
+  background-color: white;
 }
 
 #logInLogOut {
   position: absolute;
-  top: 25%;
-  right: 1%;
+  top: 15%;
+  right: 2%;
 }
 
 .dropdown {
@@ -62,12 +62,7 @@ pre {
   text-align: center;
 }
 
-.createNew {
-  background-color: #679436;
-  border-color: black;
-}
-
-.buttons {
+.buttons, .createNew, #dropdownMenu1 {
   background-color: #679436;
   border-color: #679436;
 }
