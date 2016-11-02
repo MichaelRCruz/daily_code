@@ -6,16 +6,28 @@ body {
   background-color: white;
 }
 
+#brand {
+  color: black;
+  font-family: monaco;
+  font-size: 30px;
+  letter-spacing: -3px;
+  font-weight: 900;
+}
+
 #logInLogOut {
   position: absolute;
   top: 15%;
   right: 2%;
+  font-family: monaco;
+  letter-spacing: 0px;
 }
 
 .dropdown {
   position: absolute;
   right: 2%;
-  top: 20%
+  top: 20%;
+  font-family: monaco;
+  letter-spacing: 0px;
 }
 
 pre {

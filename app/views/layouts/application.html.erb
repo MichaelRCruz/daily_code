@@ -13,8 +13,9 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="https://dailycode.herokuapp.com/">
-            <img alt="Brand">
+          <a class="navbar-brand" id="brand"            href="https://dailycode.herokuapp.com/">
+            <!-- <img alt="daily_code.io"> -->
+            dailycode.io
           </a>
         </div>
       </div>
@@ -38,8 +39,8 @@
           </div>
           <% else %>
           <div id="logInLogOut">
-            <%= link_to 'Log In', login_path, class: 'btn btn-default buttons' %>
-            <%= link_to 'Sign Up', new_user_path, class: 'btn btn-default buttons' %>
+            <%= link_to 'log_in', login_path, class: 'btn btn-default buttons' %>
+            <%= link_to 'sign_up', new_user_path, class: 'btn btn-default buttons' %>
           <% end %>
           </div>
     </nav>
