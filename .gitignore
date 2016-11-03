@@ -24,5 +24,6 @@ heroku.md
 .env
 dailycode.rb
 cli.rb
-dailycode.rb
+dailycode2.rb
 credentials.json
+test_push.js
