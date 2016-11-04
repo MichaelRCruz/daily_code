@@ -18,6 +18,11 @@ The development of this application began with designing a website that closely 
 -users can post without providing complete attributes
 -users are not prompted when entering invalid information for sign up
 
+### Installation Instructions
+
+1. create an account at https://dailycode.herokuapp.com
+2. download and install dailycode.rb and 
+
 ### Wire Frames
 ![all frames](assets/IMG_4311.JPG)
 ![all frames](assets/IMG_4312.JPG)
