@@ -80,29 +80,29 @@ def verified_request?
     end
 end
 
-def download_rb
-  send_file(
-    "test_push.js",
-    filename: "test_push.js",
-    type: "application/js"
-  )
-end
-
-def download_js
-  send_file(
-  "test.rb",
-  filename: "test.json",
-  type: "application/json"
-  )
-end
-
-def download_json
-  send_file(
-  "credentials.json",
-  filename: "credentials.json",
-  type: "application/json"
-  )
-end
+# def download_rb
+#   send_file(
+#     "test_push.js",
+#     filename: "test_push.js",
+#     type: "application/js"
+#   )
+# end
+#
+# def download_js
+#   send_file(
+#   "test.rb",
+#   filename: "test.json",
+#   type: "application/json"
+#   )
+# end
+#
+# def download_json
+#   send_file(
+#   "credentials.json",
+#   filename: "credentials.json",
+#   type: "application/json"
+#   )
+# end
 
 private
   def post_params
