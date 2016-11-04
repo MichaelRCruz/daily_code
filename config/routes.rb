@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'posts#index'
 
-  get 'home/download_rb' => 'posts#download_rb'
-  get 'home/download_js' => 'posts#download_js'
+  get 'home/download_rb' => 'posts#download_rb',
+  get 'home/download_js' => 'posts#download_js',
   get 'home/download_json' => 'posts#download_json'
 
   get '/login' => 'sessions#new'
