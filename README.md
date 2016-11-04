@@ -20,8 +20,17 @@ The development of this application began with designing a website that closely 
 
 ### Installation Instructions
 
-1. create an account at https://dailycode.herokuapp.com
-2. download and install dailycode.rb and 
+1. Create an account at https://dailycode.herokuapp.com
+2. Download and install [dailycode.rb](https://github.com/MichaelRCruz/daily_code/blob/master/dailycode.rb) and [credentials.json](https://github.com/MichaelRCruz/daily_code/blob/master/credentials.json) into your project's local directory
+3. Within your project's local directory login using the first listed terminal command below and follow the prompts. Follow the syntax of second terminal command below to push a file from your local directory to your dailycode account.
+
+```
+ruby dailycode.rb login
+```
+```
+ruby dailycode.rb "your post title" "your post content" "language used" yourfile.js
+```
+
 
 ### Wire Frames
 ![all frames](assets/IMG_4311.JPG)
