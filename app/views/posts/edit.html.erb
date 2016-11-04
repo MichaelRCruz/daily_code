@@ -1,1 +1,27 @@
 <h1>Edit this</h1>
+
+<%= form_for @post do |f| %>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :snippet %>
+    <%= f.file_field :snippet %>
+  </div>
+
+  <div>
+    <%= f.label :language %>
+    <%= f.text_field :language %>
+  </div>
+
+  <div>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+  <%= f.submit 'edit this post'%>
+<% end %>
+
+<%= link_to "back to the Posts", posts_path %>

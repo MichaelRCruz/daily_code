@@ -24,3 +24,4 @@
 
 <%= link_to "back to the Posts", posts_path %>
 <%= link_to 'delete this post', post_path, method: :delete, data: { confirm: 'Are you sure you want to delete this post' } if current_user == @post.user %>
+<%= link_to "edit this post", edit_post_path %>
