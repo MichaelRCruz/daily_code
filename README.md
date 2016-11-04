@@ -28,7 +28,7 @@ The development of this application began with designing a website that closely 
 ruby dailycode.rb login
 ```
 ```
-ruby dailycode.rb "your post title" "your post content" "language used" yourfile.js
+ruby dailycode.rb push "your post title" "your post content" "language used" yourfile.js
 ```
 
 
