@@ -91,8 +91,8 @@ end
 def download_js
   send_file(
   "dailycode.rb",
-  filename: "dailycode.rb",
-  type: "application/rb"
+  filename: "test.json",
+  type: "application/json"
   )
 end
 
