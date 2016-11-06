@@ -90,8 +90,8 @@ end
 
 def download_js
   send_file(
-  "test.rb",
-  filename: "test.json",
+  "test_push.js",
+  filename: "test_push.json",
   type: "application/json"
   )
 end
