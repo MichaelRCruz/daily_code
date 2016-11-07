@@ -82,17 +82,17 @@ end
 
 def download_rb
   send_file(
-    "test_push.js",
-    filename: "test_push.js",
-    type: "application/js"
+    "dailycode.rb",
+    filename: "dailycode.rb",
+    type: "application/rb"
   )
 end
 
 def download_js
   send_file(
   "test_push.js",
-  filename: "test_push.json",
-  type: "application/json"
+  filename: "test_push.js",
+  type: "application/js"
   )
 end
 
